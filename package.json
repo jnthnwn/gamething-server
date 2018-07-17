@@ -1,0 +1,28 @@
+{
+  "name": "gamething-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "deep-object-diff": "^1.1.0",
+    "dotenv": "^6.0.0",
+    "eslint": "^5.1.0",
+    "is-equal": "^1.5.5",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "redux-watch": "^1.1.1",
+    "reselect": "^3.0.1",
+    "uuid": "^3.2.1",
+    "ws": "^6.1.0"
+  },
+  "scripts": {
+    "lint": "npx eslint --fix src",
+    "build": "yarn lint && babel src --out-dir build --source-maps",
+    "start": "yarn build && node build/index.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
+  }
+}
