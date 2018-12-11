@@ -26,3 +26,7 @@ export function shuffle(a) {
   }
   return a;
 }
+
+export function randomFrom(a) {
+  return a[Math.floor(Math.random() * a.length)];
+}

@@ -1,4 +1,5 @@
-import { createReducer, shuffle } from '../../utils';
+import { createReducer, shuffle, randomFrom } from '../../utils';
+import topics from './topics';
 
 const initializeState = (state) => {
   state.secret.ids = shuffle(state.secret.ids);
@@ -11,12 +12,13 @@ const initializeState = (state) => {
   state.common.caught = false;
   state.common.turnInProgress = false;
   state.common.voting = false;
+  const topic = randomFrom(topics);
 
   for (let playerId of state.secret.ids) {
     state.player[playerId].isTurn = false;
     state.player[playerId].hasVoted = false;
     state.player[playerId].isFakeArtist = false;
-    state.player[playerId].topic= 'dog';
+    state.player[playerId].topic = topic;
   }
   const activeArtistIndex = 0;
   state.secret.activeArtistIndex = activeArtistIndex;
